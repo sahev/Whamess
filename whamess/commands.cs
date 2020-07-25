@@ -63,12 +63,12 @@ namespace whamess
                 driver.Navigate().GoToUrl("https://web.whatsapp.com/send?phone=" + Uri.EscapeDataString(number));
                 //driver.Navigate().GoToUrl("chrome://version");
                 Thread.Sleep(10000);
-                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("1.png", ScreenshotImageFormat.Png);
+                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
 
             }
             catch(Exception e)
             {
-                //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("1.png", ScreenshotImageFormat.Png);
+                //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
                 Console.WriteLine(e.StackTrace);
                 
             }

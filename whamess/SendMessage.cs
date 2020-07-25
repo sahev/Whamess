@@ -124,7 +124,7 @@ namespace WhasMess
 
             driver.FindElement(By.CssSelector("#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > div > div._3FRCZ.copyable-text.selectable-text")).SendKeys(Keys.Enter);
 
-                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("1.png", ScreenshotImageFormat.Png);
+                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
 
             }
 
