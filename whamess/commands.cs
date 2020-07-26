@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System.Threading;
+using OpenQA.Selenium.Support.UI;
 
 namespace whamess
 {
@@ -18,7 +19,7 @@ namespace whamess
                 case "chrome":
 
                     ChromeOptions options = new ChromeOptions();
-                    options.AddArgument("--disable-extensions");
+                    options.AddArguments("--disable-extensions");
                     options.AddArguments("--user-data-dir=C:/Users/user_data");
                     driver = new ChromeDriver(options);
 
@@ -50,8 +51,8 @@ namespace whamess
                 case "chrome":
 
                     ChromeOptions rem_chrome = new ChromeOptions();
-                    rem_chrome.AddArgument("--disable-extensions");
-                    rem_chrome.AddArguments("--user-data-dir=/tmp/Default");
+                    rem_chrome.AddArguments("--disable-extensions");
+                    rem_chrome.AddArguments("--user-data-dir=C:/Users/vmbox-1/Desktop/user_data");
                     driver = new RemoteWebDriver(new Uri(uri), rem_chrome);
 
                     break;
@@ -59,11 +60,13 @@ namespace whamess
 
             try
             {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
                 driver.Navigate().GoToUrl("https://web.whatsapp.com/send?phone=" + Uri.EscapeDataString(number));
                 //driver.Navigate().GoToUrl("chrome://version");
-                Thread.Sleep(10000);
-                ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
+                //Thread.Sleep(5000);
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(".\\_2UL8j > .\\_3FRCZ")));
+                //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
 
             }
             catch(Exception e)
@@ -74,7 +77,7 @@ namespace whamess
             }
             
 
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
 
             return driver;
 
