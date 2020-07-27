@@ -1,3 +1,7 @@
+## Info 
+
+This app uses a user session store to load WhatsApp and uses them to sendposts.
+
 ## Development server
 
 - Selenium GRID Standalone Server; 
@@ -9,9 +13,9 @@
 - MSTest.TestAdapter;
 - MSTest.TestFramework;
 - NUnit;
+- NUnit3.Console;
 - Selenium.WebDriver;
 - Selenium.WebDriver.ChromeDriver;
-
 
 ## Running 
 
@@ -34,4 +38,23 @@ With Docker:
 With Selenium GRID:
 
 	- Start Selenium grid with hub and respectives nodes;
-	- Run "runsendmessage.bat" passing parameters;
+	- Run "runsendmessage.bat" passing parameters for test.
+
+
+Endpoint:
+
+	- Initialize the project and build on local/server;
+	- API:
+		http://localhost/endpoint/data
+		Method= POST
+		Body type= JSON
+		Body= 
+		{ 
+			"number": "5511123445689",
+			"text": "message"
+		}
+		return=	
+		{ 
+			"number": "5511123445689",
+			"text": "message"
+		}
