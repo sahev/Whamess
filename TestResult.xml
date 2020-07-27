@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.11.1.0" clr-version="4.0.30319.42000" start-time="2020-07-27 03:59:47Z" end-time="2020-07-27 04:00:20Z" duration="33.210318">
+  <command-line><![CDATA[NunitConsole\nunit3-console.exe  --testparam:number=5511981568415 --testparam:text="boa noite senhor" whamess\bin\Debug\whamess.dll]]></command-line>
+  <test-suite type="Assembly" id="0-1002" name="whamess.dll" fullname="C:\samuel\whamess\whamess\bin\Debug\whamess.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-07-27 03:59:49Z" end-time="2020-07-27 04:00:20Z" duration="31.716483" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.12.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601.65536" platform="Win32NT" cwd="C:\samuel\whamess" machine-name="48594789-PC" user="DefaultAppPool" user-domain="IIS APPPOOL" culture="pt-BR" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\samuel\whamess" />
+      <setting name="TestParametersDictionary" value="[number, 5511981568415], [text, boa noite senhor]">
+        <item key="number" value="5511981568415" />
+        <item key="text" value="boa noite senhor" />
+      </setting>
+      <setting name="TestParameters" value="number=5511981568415;text=boa noite senhor" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7.2" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="RuntimeFramework" value="net-4.0" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="16376" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="0-1003" name="WhaMess" fullname="WhaMess" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-07-27 03:59:49Z" end-time="2020-07-27 04:00:20Z" duration="31.691470" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="0-1000" name="Nunit_SendMessage" fullname="WhaMess.Nunit_SendMessage" classname="WhaMess.Nunit_SendMessage" runstate="Runnable" testcasecount="1" result="Passed" start-time="2020-07-27 03:59:49Z" end-time="2020-07-27 04:00:20Z" duration="31.685896" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <test-case id="0-1001" name="SendMessage" fullname="WhaMess.Nunit_SendMessage.SendMessage" methodname="SendMessage" classname="WhaMess.Nunit_SendMessage" runstate="Runnable" seed="2027895396" result="Passed" start-time="2020-07-27 03:59:49Z" end-time="2020-07-27 04:00:20Z" duration="31.670779" asserts="0">
+          <output><![CDATA[   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at whamess.commands.GetBrowserRemote(IWebDriver driver, String browser, String number, String uri) in C:\samuel\whamess\whamess\commands.cs:line 68
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,1 @@
+NunitConsole\nunit3-console.exe --testparam:number=5511981568415 --testparam:text="mensagem do console" whamess\bin\Debug\whamess.dll
