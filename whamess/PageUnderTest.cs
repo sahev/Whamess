@@ -16,9 +16,6 @@ namespace whamess
             ChromeOptions options = new ChromeOptions();
             options.DebuggerAddress = "127.0.0.1:9222";
 
-            // Using Polly library: https://github.com/App-vNext/Polly
-            // Polly probably isn't needed in a single scenario like this, but can be useful in a broader automation project
-            // Once we attach to Chrome with Selenium, use a WebDriverWait implementation
             var policy = Policy
               .Handle<InvalidOperationException>()
               .WaitAndRetry(10, t => TimeSpan.FromSeconds(1));

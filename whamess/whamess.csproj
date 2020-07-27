@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="commands.cs" />
     <Compile Include="PageUnderTest.cs" />
     <Compile Include="SendMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

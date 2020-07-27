@@ -1,0 +1,1 @@
+CALL java -jar selenium-server-standalone-3.141.59.jar -role node -host 192.168.0.106 -port 5556 -hub http://192.168.0.109:4444/grid/register
