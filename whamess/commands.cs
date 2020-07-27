@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
+using Polly;
 
 namespace whamess
 {
@@ -63,10 +64,17 @@ namespace whamess
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
                 driver.Navigate().GoToUrl("https://web.whatsapp.com/send?phone=" + Uri.EscapeDataString(number));
+
                 //driver.Navigate().GoToUrl("chrome://version");
+
+
+
                 //Thread.Sleep(5000);
+
                 wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(".\\_2UL8j > .\\_3FRCZ")));
-                //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
+
+
+               //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
 
             }
             catch(Exception e)
@@ -76,6 +84,53 @@ namespace whamess
                 
             }
             
+
+            //Thread.Sleep(5000);
+
+            return driver;
+
+        }
+
+
+
+        public static IWebDriver GetBrowserRemoteSession(IWebDriver driver, String browser, String uri)
+        {
+
+
+            switch (browser)
+            {
+                case "chrome":
+
+              
+
+                    ChromeOptions rem_chrome = new ChromeOptions();
+                    rem_chrome.AddArguments("--disable-extensions");
+                    //rem_chrome.AddArguments("--user-data-dir=C:/Users/vmbox-1/Desktop/user_data");
+                    //rem_chrome.DebuggerAddress = "127.0.0.1:9222";
+
+                    driver = new RemoteWebDriver(new Uri(uri), rem_chrome);
+
+                    
+                    break;
+            }
+
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+                driver.Navigate().GoToUrl("https://google.com");
+
+                //driver.Navigate().GoToUrl("chrome://version");
+
+
+            }
+            catch (Exception e)
+            {
+                //((ITakesScreenshot)driver).GetScreenshot().SaveAsFile("docker_screenshot.png", ScreenshotImageFormat.Png);
+                Console.WriteLine(e.StackTrace);
+
+            }
+
 
             //Thread.Sleep(5000);
 
