@@ -1,6 +1,9 @@
 ## Info 
 
-This app uses a user session store to load WhatsApp and uses them to sendposts.
+This app uses a user session store to load WhatsApp and uses them to sendposts. 
+
+Development purpose for studies ONLY. 
+All rights reserved to the appropriate representatives
 
 ## Development server
 
