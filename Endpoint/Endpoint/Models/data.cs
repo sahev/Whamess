@@ -10,13 +10,14 @@ namespace Endpoint.Models
         public string number { get; set; }
         public string text { get; set; }
 
+
         public List<Response> data()
         {
             Response res = new Response();
 
             res.number = "";
             res.text = "";
-
+            
             List<Response> data = new List<Response>();
 
             data.Add(res);
@@ -25,5 +26,6 @@ namespace Endpoint.Models
 
         }
 
-    }
+     }
+
 }

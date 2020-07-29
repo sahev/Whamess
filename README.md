@@ -46,15 +46,26 @@ Endpoint:
 	- Initialize the project and build on local/server;
 	- API:
 		http://localhost/endpoint/data
-		Method= POST
-		Body type= JSON
-		Body= 
-		{ 
-			"number": "5511123445689",
-			"text": "message"
-		}
-		return=	
-		{ 
-			"number": "5511123445689",
-			"text": "message"
-		}
+		Method: POST
+		Body type: JSON
+		Body: 
+			{ 
+				"number": "5511123445689", //only 13 numbers
+				"text": "message" //only > ""
+			}
+		
+		return types:	
+		http: 200 OK
+			{ 
+				"success": "Mensagem enviada!"
+			}
+			http: 400 BAD REQUEST
+			{
+				"error": "Numero invalido!"
+			}
+			http: 400 BAD REQUEST
+			{
+				"error": "Insira uma mensagem!"
+			}		
+		
+		
