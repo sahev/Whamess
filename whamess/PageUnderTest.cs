@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using Polly;
 using System;
+using System.Configuration;
 
 
 namespace whamess
@@ -14,7 +15,7 @@ namespace whamess
         public void AttachRequestMessageToChrome()
         {
             ChromeOptions options = new ChromeOptions();
-            options.DebuggerAddress = "127.0.0.1:9222";
+            options.DebuggerAddress = ConfigurationManager.AppSettings["DebuggerAddress"];
 
             var policy = Policy
               .Handle<InvalidOperationException>()
@@ -22,8 +23,8 @@ namespace whamess
 
             policy.Execute(() =>
             {
-
-                Driver = new RemoteWebDriver(new Uri("http://192.168.254.128:5555/wd/hub"), options);
+                string UriRemoteWebDriver = ConfigurationManager.AppSettings["UriRemoteWebDriver"];
+                Driver = new RemoteWebDriver(new Uri(UriRemoteWebDriver), options);
 
             });
         }

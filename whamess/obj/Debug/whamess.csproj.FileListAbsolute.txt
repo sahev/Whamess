@@ -27,3 +27,4 @@ C:\samuel\whamess\whamess\bin\Debug\WebDriver.Support.xml
 C:\samuel\whamess\whamess\bin\Debug\Polly.dll
 C:\samuel\whamess\whamess\bin\Debug\Polly.pdb
 C:\samuel\whamess\whamess\bin\Debug\Polly.xml
+C:\samuel\whamess\whamess\bin\Debug\whamess.dll.config
