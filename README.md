@@ -51,7 +51,7 @@ Endpoint:
 		Body: 
 			{ 
 				"number": "5511123445689", //only 13 numbers
-				"text": "message" //only > ""
+				"text": "message" //only != ""
 			}
 		
 		return types:	
