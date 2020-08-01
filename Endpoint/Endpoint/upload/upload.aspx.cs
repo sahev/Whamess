@@ -32,7 +32,7 @@ namespace Endpoint.upload
                 {
                     FileUpload1.SaveAs(Server.MapPath("~/files/" + FileUpload1.FileName));
                     
-                    lblMessage.Text = "<br/>Processando e enviando mensagens...";
+                    lblMessage.Text = "<br/>Arquivo processado e campanha finalizada.";
                     
                     lblMessage.ForeColor = System.Drawing.Color.Green;
 
@@ -71,7 +71,7 @@ namespace Endpoint.upload
 
                 strm.Close();
 
-                sIn.WriteLine("NunitConsole\\nunit3-console.exe --where cat=\"SendViaExcel\" whamess\\bin\\Debug\\whamess.dll");
+                sIn.WriteLine("testconsole\\vstest.console.exe /tests:SendViaExcel whamess\\bin\\Debug\\whamess.dll");
 
                 sIn.WriteLine("EXIT");
 

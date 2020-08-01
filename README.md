@@ -71,4 +71,9 @@ Endpoint:
 				"error": "Insira uma mensagem!"
 			}		
 		
+	- Interface:
+		Upload file (.xls or .xlsx) for process data:
 		
+		http://localhost/Endpoint/upload/upload.aspx
+		
+	
