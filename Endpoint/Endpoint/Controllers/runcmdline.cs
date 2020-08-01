@@ -37,7 +37,7 @@ namespace Endpoint.Controllers
 
                 strm.Close();
 
-                sIn.WriteLine("NunitConsole\\nunit3-console.exe --testparam:number=" + number + " --testparam:text=\"" + text + "\" whamess\\bin\\Debug\\whamess.dll");
+                sIn.WriteLine("NunitConsole\\nunit3-console.exe --testparam:number=\"" + number + "\" --testparam:text=\"" + text + "\" --where cat=\"AttachNavRequest\" whamess\\bin\\Debug\\whamess.dll");
 
                 sIn.WriteLine("EXIT");
 

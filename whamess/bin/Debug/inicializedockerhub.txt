@@ -1,0 +1,12 @@
+1: docker-machine start default
+
+2: docker-machine env default
+
+3: @FOR /f "tokens=*" %i IN ('docker-machine env') DO @%i
+
+4: docker-compose up -d
+
+docker ps
+
+docker-machine ip
+

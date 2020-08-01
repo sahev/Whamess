@@ -4,7 +4,7 @@ using OpenQA.Selenium.Remote;
 using Polly;
 using System;
 using System.Configuration;
-
+using System.Threading;
 
 namespace whamess
 {
@@ -25,6 +25,8 @@ namespace whamess
             {
                 string UriRemoteWebDriver = ConfigurationManager.AppSettings["UriRemoteWebDriver"];
                 Driver = new RemoteWebDriver(new Uri(UriRemoteWebDriver), options);
+
+                ((ITakesScreenshot)Driver).GetScreenshot().SaveAsFile("1.png", ScreenshotImageFormat.Png);
 
             });
         }
