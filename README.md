@@ -48,7 +48,7 @@ Endpoint:
 
 	- Initialize the project and build on local/server;
 	- API:
-		http://localhost/endpoint/data
+		http://localhost/api/data
 		Method: POST
 		Body type: JSON
 		Body: 
@@ -71,9 +71,39 @@ Endpoint:
 				"error": "Insira uma mensagem!"
 			}		
 		
-	- Interface:
-		Upload file (.xls or .xlsx) for process data:
+Interface:
+
+	- http://localhost/upload/upload.aspx
+
+	- Upload file (.xls or .xlsx) for process data:
+	
+	- File needed type:
+
+		1: required for first column: NUMBER (11xxxxxxxxx);
+
+		2: required for second column: NAME;
+
+		3: more 5 columns optional witch any data;
+
+	- TextBox:
+		{0}: required number column;
+		{1}: required text column;
+		{2}: optional data column;
+		{3}: optional data column;
+		{4}: optional data column;
+		{5}: optional data column;
+		{6}: optional data column;
+
+	- Example usage: 
 		
-		http://localhost/Endpoint/upload/upload.aspx
+		number: {0}
+		name: {1}
+		pos 3: {2}
+		pos 4: {3}
+		pos 5: {4}
+		pos 6: {5}
+		pos 7: {6}
+			 
 		
+
 	
