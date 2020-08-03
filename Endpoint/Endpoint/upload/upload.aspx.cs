@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Endpoint.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -19,11 +20,13 @@ namespace Endpoint.upload
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-           
-            if(FileUpload1.HasFile)
+
+            Runcmdline run = new Runcmdline();
+
+            if (FileUpload1.HasFile)
             {
                 string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName);
-                if(fileExtension.ToLower() != ".xls" && fileExtension.ToLower() != ".xlsx")
+                if (fileExtension.ToLower() != ".xls" && fileExtension.ToLower() != ".xlsx")
                 {
                     lblMessage.Text = "<br/>Somente arquivos .xls ou .xlsx permitidos";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -31,67 +34,71 @@ namespace Endpoint.upload
                 else
                 {
                     FileUpload1.SaveAs(Server.MapPath("~/files/" + FileUpload1.FileName));
-                    
+
                     lblMessage.Text = "<br/>Arquivo processado e campanha finalizada.";
-                    
+
                     lblMessage.ForeColor = System.Drawing.Color.Green;
 
-                    executesend();
+                    string message = TextBox1.Text.Replace("\n", "</br>");
+
+                    run.executesendmstest(message);
+
                 }
             }
 
 
-        }
-
-        public string executesend()
-        {
-            string strFilePath = ConfigurationManager.AppSettings["strFilePath"];
-
-            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("cmd.exe");
-            psi.UseShellExecute = false;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardInput = true;
-            psi.RedirectStandardError = true;
-            psi.WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"]; ;
-
-            try
-            {
-                System.Diagnostics.Process proc = System.Diagnostics.Process.Start(psi);
-
-                System.IO.StreamReader strm = System.IO.File.OpenText(strFilePath);
-
-                System.IO.StreamReader sOut = proc.StandardOutput;
-
-                System.IO.StreamWriter sIn = proc.StandardInput;
-
-                while (strm.Peek() != -1)
-                {
-                    sIn.WriteLine(strm.ReadLine());
-                }
-
-                strm.Close();
-
-                sIn.WriteLine("testconsole\\vstest.console.exe /tests:SendViaExcel whamess\\bin\\Debug\\whamess.dll");
-
-                sIn.WriteLine("EXIT");
-
-                proc.Close();
-
-                string results = sOut.ReadToEnd().Trim();
-
-                sIn.Close();
-
-                sOut.Close();
-
-                return "success!";
-            }
-
-            catch (Exception ex)
-            {
-                return ex.InnerException.Message;
-            }
 
         }
+
+        //public string executesend()
+        //{
+        //    string strFilePath = ConfigurationManager.AppSettings["strFilePath"];
+
+        //    System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("cmd.exe");
+        //    psi.UseShellExecute = false;
+        //    psi.RedirectStandardOutput = true;
+        //    psi.RedirectStandardInput = true;
+        //    psi.RedirectStandardError = true;
+        //    psi.WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"]; ;
+
+        //    try
+        //    {
+        //        System.Diagnostics.Process proc = System.Diagnostics.Process.Start(psi);
+
+        //        System.IO.StreamReader strm = System.IO.File.OpenText(strFilePath);
+
+        //        System.IO.StreamReader sOut = proc.StandardOutput;
+
+        //        System.IO.StreamWriter sIn = proc.StandardInput;
+
+        //        while (strm.Peek() != -1)
+        //        {
+        //            sIn.WriteLine(strm.ReadLine());
+        //        }
+
+        //        strm.Close();
+
+        //        sIn.WriteLine("testconsole\\vstest.console.exe /tests:SendViaExcel whamess\\bin\\Debug\\whamess.dll");
+
+        //        sIn.WriteLine("EXIT");
+
+        //        proc.Close();
+
+        //        string results = sOut.ReadToEnd().Trim();
+
+        //        sIn.Close();
+
+        //        sOut.Close();
+
+        //        return "success!";
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        return ex.InnerException.Message;
+        //    }
+
+        //}
 
     }
 

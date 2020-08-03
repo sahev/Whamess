@@ -1,0 +1,1 @@
+chrome.exe web.whatsapp.com --remote-debugging-port=9224 --user-data-dir=C:\samuel\whamess\whamess\bin\Debug\ser

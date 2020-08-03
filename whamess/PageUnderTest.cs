@@ -26,8 +26,6 @@ namespace whamess
                 string UriRemoteWebDriver = ConfigurationManager.AppSettings["UriRemoteWebDriver"];
                 Driver = new RemoteWebDriver(new Uri(UriRemoteWebDriver), options);
 
-                ((ITakesScreenshot)Driver).GetScreenshot().SaveAsFile("1.png", ScreenshotImageFormat.Png);
-
             });
         }
     }

@@ -65,3 +65,4 @@ C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csproj.CoreCompileInputs.
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csproj.CopyComplete
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.dll
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.pdb
+C:\samuel\whamess\Endpoint\Endpoint\bin\QRCoder.dll

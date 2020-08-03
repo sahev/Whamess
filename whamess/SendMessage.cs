@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,8 @@ namespace whamess
         public void SendViaExcel()
         {
 
+            string message = NUnit.Framework.TestContext.Parameters.Get("text");
+
             Page.AttachRequestMessageToChrome();
 
             readfile readd = new readfile();
@@ -72,20 +75,21 @@ namespace whamess
 
             foreach (var a in listdata)
             {
-                string text = a.Name;
+                string name = a.Name;
                 string num = "55" + a.Number;
                 string prod = a.Product;
                 string req = a.Request;
 
 
+                string script = String.Format(@""+message+"", name, prod, req);
 
-                string mess = @"Boa Tarde, *" + text + "* <br/>" +
-                    "Tudo bem?  <br/>" +
-                    "<br/>Somos da Beco Nerd, vimos que realizou uma compra em nosso site para a *" + prod + "*, ***(Pedido *#" + req + "*) até o momento não identificamos o pagamento, então passamos aqui para lembrar e enviar uma segunda via de boleto. <br/>" +
-                    "<br/>Você não pode perder a chance de ter essa caneca em sua coleção, nossos estoques estão acabando, estamos vendendo muito essa caneca, então para dar uma forcinha segue um cupom de desconto LUFABECO1, correeee e não perde essa super oportunidade. <br/>" +
-                    "<br/>Link Caneca Mapa do Maroto: *https://www.beconerd.com.br/produtos/algum-produto-listado-em-algum-lugar  <br/>" +
-                    "<br/>Obs: Se realizou o pagamento do boleto, por favor, desconsiderar essa mensagem, e se necessário entrar em contato conosco, para entendermos com o Pagseguro o motivo do valor não ter compensado para nós. <br/>" +
-                    "<br/>Equipe Beco Nerd.";
+                //string mess = @"Boa Tarde, *" + text + "* <br/>" +
+                //    "Tudo bem?  <br/>" +
+                //    "<br/>Somos da Beco Nerd, vimos que realizou uma compra em nosso site para a *" + prod + "*, ***(Pedido *#" + req + "*) até o momento não identificamos o pagamento, então passamos aqui para lembrar e enviar uma segunda via de boleto. <br/>" +
+                //    "<br/>Você não pode perder a chance de ter essa caneca em sua coleção, nossos estoques estão acabando, estamos vendendo muito essa caneca, então para dar uma forcinha segue um cupom de desconto LUFABECO1, correeee e não perde essa super oportunidade. <br/>" +
+                //    "<br/>Link Caneca Mapa do Maroto: *https://www.beconerd.com.br/produtos/algum-produto-listado-em-algum-lugar  <br/>" +
+                //    "<br/>Obs: Se realizou o pagamento do boleto, por favor, desconsiderar essa mensagem, e se necessário entrar em contato conosco, para entendermos com o Pagseguro o motivo do valor não ter compensado para nós. <br/>" +
+                //    "<br/>Equipe Beco Nerd.";
 
 
                 string jsnumber = "const openChat = phone =>{ const link = document.createElement('a'); link.setAttribute('href', 'whatsapp://send?phone=" + num + "'); document.body.append(link);link.click(); document.body.removeChild(link); }; openChat();";
@@ -98,7 +102,7 @@ namespace whamess
                     "function myFunc() " +
                         "{ " +
                         "messageBox = document.querySelectorAll(\"[contenteditable='true']\")[1]; " +
-                        "message = \"" + mess + "\"; event = document.createEvent(\"UIEvents\"); " +
+                        "message = \"" + script + "\"; event = document.createEvent(\"UIEvents\"); " +
                         "messageBox.innerHTML = message.replace(/ /gm, ' '); " +
                         "event.initUIEvent(\"input\", true, true, window, 1); " +
                         "messageBox.dispatchEvent(event); " +
