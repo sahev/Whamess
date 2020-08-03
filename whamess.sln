@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whamess", "whamess\whamess.csproj", "{8AAB02FF-B0B8-448C-A7B8-4E26AD656E12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endpoint", "Endpoint\Endpoint\Endpoint.csproj", "{59B2B8BA-06CD-4B3B-89FC-71F375E58937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8AAB02FF-B0B8-448C-A7B8-4E26AD656E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AAB02FF-B0B8-448C-A7B8-4E26AD656E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AAB02FF-B0B8-448C-A7B8-4E26AD656E12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B2B8BA-06CD-4B3B-89FC-71F375E58937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B2B8BA-06CD-4B3B-89FC-71F375E58937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B2B8BA-06CD-4B3B-89FC-71F375E58937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B2B8BA-06CD-4B3B-89FC-71F375E58937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

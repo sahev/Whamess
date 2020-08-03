@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace Endpoint.Controllers
@@ -62,7 +63,12 @@ namespace Endpoint.Controllers
         public string executesendmstest(string message)
         {
 
-            
+            Encoding seuEncoding = Encoding.GetEncoding("Windows-1252");
+            Encoding cp850 = Encoding.GetEncoding(850);
+
+            byte[] cpBytes = cp850.GetBytes(message);
+            string msg = seuEncoding.GetString(cpBytes);
+
             string strFilePath = ConfigurationManager.AppSettings["strFilePath"];
 
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("cmd.exe");
@@ -89,7 +95,9 @@ namespace Endpoint.Controllers
 
                 strm.Close();
 
-                sIn.WriteLine("NunitConsole\\nunit3-console.exe --testparam:text=\"" + message + "\" --where cat=\"SendViaExcel\"  whamess\\bin\\Debug\\whamess.dll");
+
+
+                sIn.WriteLine("NunitConsole\\nunit3-console.exe --testparam:text=\"" + msg + "\" --where cat=\"SendViaExcel\"  whamess\\bin\\Debug\\whamess.dll");
 
                 sIn.WriteLine("EXIT");
 

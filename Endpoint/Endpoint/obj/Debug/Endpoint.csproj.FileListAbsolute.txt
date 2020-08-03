@@ -52,6 +52,7 @@ C:\samuel\whamess\Endpoint\Endpoint\bin\roslyn\VBCSCompiler.exe
 C:\samuel\whamess\Endpoint\Endpoint\bin\roslyn\VBCSCompiler.exe.config
 C:\samuel\whamess\Endpoint\Endpoint\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\samuel\whamess\Endpoint\Endpoint\bin\Newtonsoft.Json.dll
+C:\samuel\whamess\Endpoint\Endpoint\bin\QRCoder.dll
 C:\samuel\whamess\Endpoint\Endpoint\bin\System.Net.Http.Formatting.dll
 C:\samuel\whamess\Endpoint\Endpoint\bin\System.Web.Http.dll
 C:\samuel\whamess\Endpoint\Endpoint\bin\System.Web.Http.WebHost.dll
@@ -60,9 +61,8 @@ C:\samuel\whamess\Endpoint\Endpoint\bin\System.Net.Http.Formatting.xml
 C:\samuel\whamess\Endpoint\Endpoint\bin\System.Web.Http.xml
 C:\samuel\whamess\Endpoint\Endpoint\bin\System.Web.Http.WebHost.xml
 C:\samuel\whamess\Endpoint\Endpoint\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csprojAssemblyReference.cache
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csproj.CoreCompileInputs.cache
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csproj.CopyComplete
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.dll
 C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.pdb
-C:\samuel\whamess\Endpoint\Endpoint\bin\QRCoder.dll
+C:\samuel\whamess\Endpoint\Endpoint\obj\Debug\Endpoint.csprojAssemblyReference.cache

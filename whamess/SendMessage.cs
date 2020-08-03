@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Windows;
 using whamess;
@@ -65,7 +66,8 @@ namespace whamess
         public void SendViaExcel()
         {
 
-            string message = NUnit.Framework.TestContext.Parameters.Get("text");
+            string messs = NUnit.Framework.TestContext.Parameters.Get("text");
+            //string messs = "telefone {0} nome {1} pedido {2} email {3} produto {4} posicao5 {5} posicao6 {6}";
 
             Page.AttachRequestMessageToChrome();
 
@@ -75,24 +77,19 @@ namespace whamess
 
             foreach (var a in listdata)
             {
+                string number = "55" + a.Number;
                 string name = a.Name;
-                string num = "55" + a.Number;
-                string prod = a.Product;
-                string req = a.Request;
+                string v2 = a.v2;
+                string v3 = a.v3;
+                string v4 = a.v4;
+                string v5 = a.v5;
+                string v6 = a.v6;
 
+                string script = String.Format(messs, number, name, v2, v3, v4, v5, v6);
 
-                string script = String.Format(@""+message+"", name, prod, req);
+                //System.Console.WriteLine(messs);
 
-                //string mess = @"Boa Tarde, *" + text + "* <br/>" +
-                //    "Tudo bem?  <br/>" +
-                //    "<br/>Somos da Beco Nerd, vimos que realizou uma compra em nosso site para a *" + prod + "*, ***(Pedido *#" + req + "*) até o momento não identificamos o pagamento, então passamos aqui para lembrar e enviar uma segunda via de boleto. <br/>" +
-                //    "<br/>Você não pode perder a chance de ter essa caneca em sua coleção, nossos estoques estão acabando, estamos vendendo muito essa caneca, então para dar uma forcinha segue um cupom de desconto LUFABECO1, correeee e não perde essa super oportunidade. <br/>" +
-                //    "<br/>Link Caneca Mapa do Maroto: *https://www.beconerd.com.br/produtos/algum-produto-listado-em-algum-lugar  <br/>" +
-                //    "<br/>Obs: Se realizou o pagamento do boleto, por favor, desconsiderar essa mensagem, e se necessário entrar em contato conosco, para entendermos com o Pagseguro o motivo do valor não ter compensado para nós. <br/>" +
-                //    "<br/>Equipe Beco Nerd.";
-
-
-                string jsnumber = "const openChat = phone =>{ const link = document.createElement('a'); link.setAttribute('href', 'whatsapp://send?phone=" + num + "'); document.body.append(link);link.click(); document.body.removeChild(link); }; openChat();";
+                string jsnumber = "const openChat = phone =>{ const link = document.createElement('a'); link.setAttribute('href', 'whatsapp://send?phone=" + number + "'); document.body.append(link);link.click(); document.body.removeChild(link); }; openChat();";
 
                 string jstext =
                     "var eventFire = (MyElement, ElementType) => " +
@@ -110,7 +107,7 @@ namespace whamess
                         "}; " +
                     "myFunc();";
 
-                System.Console.WriteLine(String.Format("Number: {0} Name: {1}", a.Number, a.Name));
+                System.Console.WriteLine(String.Format("Number: {0} Name: {1} Var1: {2} Var2: {3} Var3: {4} Var4: {5} Var5: {6} ", a.Number, a.Name, a.v2, a.v3, a.v4, a.v5, a.v6));
 
 
                 ((IJavaScriptExecutor)Page.Driver).ExecuteScript(jsnumber);
@@ -123,7 +120,7 @@ namespace whamess
         }
       
         private Window Window => new Window();
-        public AttachResquest Page { get; } = new AttachResquest();
+        public AttachResquest Page { get;  } = new AttachResquest();
   
     }
 }

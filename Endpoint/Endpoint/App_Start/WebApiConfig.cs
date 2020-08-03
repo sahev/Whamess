@@ -16,7 +16,7 @@ namespace Endpoint
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "{controller}"
+                routeTemplate: "api/{controller}"
 
             );
         }
