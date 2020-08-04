@@ -104,6 +104,6 @@ Interface:
 		pos 6: {5}
 		pos 7: {6}
 			 
-		
+	image: https://github.com/sahev/Whamess/blob/master/example.png?raw=true
 
 	
