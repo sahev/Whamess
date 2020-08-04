@@ -87,8 +87,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="scripts\jquery-3.5.1.js" />
+    <Content Include="scripts\scripts.js" />
+    <Content Include="styles\bootstrap.min.css" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="scripts\jquery-3.5.1.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="upload\upload.aspx" />
+    <Content Include="scripts\jquery.bootpag.min.js" />
+    <Content Include="upload.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,11 +112,11 @@
     </Compile>
     <Compile Include="Models\data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="upload\upload.aspx.cs">
+    <Compile Include="upload.aspx.cs">
       <DependentUpon>upload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="upload\upload.aspx.designer.cs">
+    <Compile Include="upload.aspx.designer.cs">
       <DependentUpon>upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

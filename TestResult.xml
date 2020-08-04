@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run id="0" runstate="Runnable" testcasecount="2" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.11.1.0" clr-version="4.0.30319.42000" start-time="2020-08-04 03:46:32Z" end-time="2020-08-04 03:46:37Z" duration="4.533435">
-  <command-line><![CDATA[NunitConsole\nunit3-console.exe  --testparam:text="number: {0}</br>	name: {1}</br>	pos 3: {2}</br>	pos 4: {3}</br>	pos 5: {4}</br>	pos 6: {5}</br>	pos 7: {6}" --where cat="SendViaExcel"  whamess\bin\Debug\whamess.dll]]></command-line>
+<test-run id="0" runstate="Runnable" testcasecount="2" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.11.1.0" clr-version="4.0.30319.42000" start-time="2020-08-04 21:25:37Z" end-time="2020-08-04 21:25:43Z" duration="6.145460">
+  <command-line><![CDATA[NunitConsole\nunit3-console.exe  --testparam:text="Bom dia {1}!                                      </br>Tudo bem?       " --where cat="SendViaExcel"  whamess\bin\Debug\whamess.dll]]></command-line>
   <filter>
     <cat>SendViaExcel</cat>
   </filter>
-  <test-suite type="Assembly" id="0-1003" name="whamess.dll" fullname="C:\samuel\whamess\whamess\bin\Debug\whamess.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 03:46:33Z" end-time="2020-08-04 03:46:37Z" duration="3.623303" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+  <test-suite type="Assembly" id="0-1003" name="whamess.dll" fullname="C:\samuel\whamess\whamess\bin\Debug\whamess.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 21:25:38Z" end-time="2020-08-04 21:25:43Z" duration="4.845394" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
     <environment framework-version="3.12.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601.65536" platform="Win32NT" cwd="C:\samuel\whamess" machine-name="48594789-PC" user="SYSTEM" user-domain="WORKGROUP" culture="pt-BR" uiculture="en-US" os-architecture="x64" />
     <settings>
       <setting name="DisposeRunners" value="True" />
       <setting name="WorkDirectory" value="C:\samuel\whamess" />
-      <setting name="TestParametersDictionary" value="[text, number: {0}&lt;/br&gt;&#x9;name: {1}&lt;/br&gt;&#x9;pos 3: {2}&lt;/br&gt;&#x9;pos 4: {3}&lt;/br&gt;&#x9;pos 5: {4}&lt;/br&gt;&#x9;pos 6: {5}&lt;/br&gt;&#x9;pos 7: {6}]">
-        <item key="text" value="number: {0}&lt;/br&gt;&#x9;name: {1}&lt;/br&gt;&#x9;pos 3: {2}&lt;/br&gt;&#x9;pos 4: {3}&lt;/br&gt;&#x9;pos 5: {4}&lt;/br&gt;&#x9;pos 6: {5}&lt;/br&gt;&#x9;pos 7: {6}" />
+      <setting name="TestParametersDictionary" value="[text, Bom dia {1}!                                      &lt;/br&gt;Tudo bem?       ]">
+        <item key="text" value="Bom dia {1}!                                      &lt;/br&gt;Tudo bem?       " />
       </setting>
-      <setting name="TestParameters" value="text=number: {0}&lt;/br&gt;&#x9;name: {1}&lt;/br&gt;&#x9;pos 3: {2}&lt;/br&gt;&#x9;pos 4: {3}&lt;/br&gt;&#x9;pos 5: {4}&lt;/br&gt;&#x9;pos 6: {5}&lt;/br&gt;&#x9;pos 7: {6}" />
+      <setting name="TestParameters" value="text=Bom dia {1}!                                      &lt;/br&gt;Tudo bem?       " />
       <setting name="ImageRuntimeVersion" value="4.0.30319" />
       <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7.2" />
       <setting name="ImageRequiresX86" value="False" />
@@ -21,19 +21,21 @@
       <setting name="NumberOfTestWorkers" value="8" />
     </settings>
     <properties>
-      <property name="_PID" value="3152" />
+      <property name="_PID" value="17900" />
       <property name="_APPDOMAIN" value="domain-" />
     </properties>
-    <test-suite type="TestSuite" id="0-1004" name="whamess" fullname="whamess" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 03:46:33Z" end-time="2020-08-04 03:46:37Z" duration="3.598676" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="TestSuite" id="0-1004" name="whamess" fullname="whamess" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 21:25:38Z" end-time="2020-08-04 21:25:43Z" duration="4.819597" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
       <properties />
-      <test-suite type="TestFixture" id="0-1000" name="SendMessage" fullname="whamess.SendMessage" classname="whamess.SendMessage" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 03:46:33Z" end-time="2020-08-04 03:46:37Z" duration="3.593188" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="0-1000" name="SendMessage" fullname="whamess.SendMessage" classname="whamess.SendMessage" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-04 21:25:38Z" end-time="2020-08-04 21:25:43Z" duration="4.813410" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="0-1002" name="SendViaExcel" fullname="whamess.SendMessage.SendViaExcel" methodname="SendViaExcel" classname="whamess.SendMessage" runstate="Runnable" seed="1677759487" result="Passed" start-time="2020-08-04 03:46:33Z" end-time="2020-08-04 03:46:37Z" duration="3.579486" asserts="0">
+        <test-case id="0-1002" name="SendViaExcel" fullname="whamess.SendMessage.SendViaExcel" methodname="SendViaExcel" classname="whamess.SendMessage" runstate="Runnable" seed="2016213990" result="Passed" start-time="2020-08-04 21:25:38Z" end-time="2020-08-04 21:25:43Z" duration="4.798783" asserts="0">
           <properties>
             <property name="Category" value="SendViaExcel" />
           </properties>
-          <output><![CDATA[Number: 11981568415 Name: Samuel Var1: 197 Var2: samuel@henri.que Var3:  Var4:  Var5:  
-Number: 11981568415 Name: Henrique Var1: 563 Var2: henrique@sa.muel Var3:  Var4:  Var5:  
+          <output><![CDATA[Number: 11981568415 Name: um Var1: 1 Var2: um@1.1 Var3: A Var4:  Var5:  
+Number: 11981568415 Name: dois Var1: 2 Var2: dois@2.2 Var3: B Var4:  Var5:  
+Number: 11981568415 Name: três Var1: 3 Var2: tres@3.3 Var3: C Var4:  Var5:  
+Number: 11981568415 Name: quatro Var1: 4 Var2: quatro@4.4 Var3: D Var4:  Var5:  
 ]]></output>
         </test-case>
       </test-suite>
