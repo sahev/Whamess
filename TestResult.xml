@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run id="0" runstate="Runnable" testcasecount="2" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.11.1.0" clr-version="4.0.30319.42000" start-time="2020-08-05 01:58:06Z" end-time="2020-08-05 01:58:10Z" duration="4.229403">
-  <command-line><![CDATA[NunitConsole\nunit3-console.exe  --testparam:text="Teste *{1}*" --where cat="SendViaExcel"  whamess\bin\Debug\whamess.dll]]></command-line>
+<test-run id="0" runstate="Runnable" testcasecount="2" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.11.1.0" clr-version="4.0.30319.42000" start-time="2020-08-05 04:33:21Z" end-time="2020-08-05 04:33:25Z" duration="4.729120">
+  <command-line><![CDATA[NunitConsole\nunit3-console.exe  --testparam:text="teste" --where cat="SendViaExcel"  whamess\bin\Debug\whamess.dll]]></command-line>
   <filter>
     <cat>SendViaExcel</cat>
   </filter>
-  <test-suite type="Assembly" id="0-1003" name="whamess.dll" fullname="C:\samuel\whamess\whamess\bin\Debug\whamess.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 01:58:07Z" end-time="2020-08-05 01:58:10Z" duration="3.338497" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+  <test-suite type="Assembly" id="0-1003" name="whamess.dll" fullname="C:\samuel\whamess\whamess\bin\Debug\whamess.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 04:33:22Z" end-time="2020-08-05 04:33:25Z" duration="3.463110" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
     <environment framework-version="3.12.0.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 6.1.7601.65536" platform="Win32NT" cwd="C:\samuel\whamess" machine-name="48594789-PC" user="SYSTEM" user-domain="WORKGROUP" culture="pt-BR" uiculture="en-US" os-architecture="x64" />
     <settings>
       <setting name="DisposeRunners" value="True" />
       <setting name="WorkDirectory" value="C:\samuel\whamess" />
-      <setting name="TestParametersDictionary" value="[text, Teste *{1}*]">
-        <item key="text" value="Teste *{1}*" />
+      <setting name="TestParametersDictionary" value="[text, teste]">
+        <item key="text" value="teste" />
       </setting>
-      <setting name="TestParameters" value="text=Teste *{1}*" />
+      <setting name="TestParameters" value="text=teste" />
       <setting name="ImageRuntimeVersion" value="4.0.30319" />
       <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7.2" />
       <setting name="ImageRequiresX86" value="False" />
@@ -21,14 +21,14 @@
       <setting name="NumberOfTestWorkers" value="8" />
     </settings>
     <properties>
-      <property name="_PID" value="9860" />
+      <property name="_PID" value="2864" />
       <property name="_APPDOMAIN" value="domain-" />
     </properties>
-    <test-suite type="TestSuite" id="0-1004" name="whamess" fullname="whamess" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 01:58:07Z" end-time="2020-08-05 01:58:10Z" duration="3.312293" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="TestSuite" id="0-1004" name="whamess" fullname="whamess" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 04:33:22Z" end-time="2020-08-05 04:33:25Z" duration="3.436577" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
       <properties />
-      <test-suite type="TestFixture" id="0-1000" name="SendMessage" fullname="whamess.SendMessage" classname="whamess.SendMessage" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 01:58:07Z" end-time="2020-08-05 01:58:10Z" duration="3.306101" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestFixture" id="0-1000" name="SendMessage" fullname="whamess.SendMessage" classname="whamess.SendMessage" runstate="Runnable" testcasecount="2" result="Passed" start-time="2020-08-05 04:33:22Z" end-time="2020-08-05 04:33:25Z" duration="3.430612" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-case id="0-1002" name="SendViaExcel" fullname="whamess.SendMessage.SendViaExcel" methodname="SendViaExcel" classname="whamess.SendMessage" runstate="Runnable" seed="823027999" result="Passed" start-time="2020-08-05 01:58:07Z" end-time="2020-08-05 01:58:10Z" duration="3.290130" asserts="0">
+        <test-case id="0-1002" name="SendViaExcel" fullname="whamess.SendMessage.SendViaExcel" methodname="SendViaExcel" classname="whamess.SendMessage" runstate="Runnable" seed="108440165" result="Passed" start-time="2020-08-05 04:33:22Z" end-time="2020-08-05 04:33:25Z" duration="3.414989" asserts="0">
           <properties>
             <property name="Category" value="SendViaExcel" />
           </properties>

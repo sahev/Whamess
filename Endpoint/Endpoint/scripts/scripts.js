@@ -97,3 +97,16 @@ function uploadstatus(icon, title) {
         title: title
     })
 }
+
+function error(text) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: text
+    })
+}
+
+function settextbox(text) {
+    
+    document.getElementById('TextBox1').innerHTML += text;
+}

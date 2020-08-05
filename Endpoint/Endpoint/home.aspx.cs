@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.IO;
 using System.Web.UI.WebControls;
-
+using System.Windows.Controls;
 
 namespace Endpoint.upload
 {
@@ -71,7 +71,7 @@ namespace Endpoint.upload
 
                         lblmessage.Text = "Pré-visualização do arquivo:";
 
-                        ClientScript.RegisterStartupScript(this.GetType(), "", "uploadstatus('success','Arquivo Processado')", true);
+                        ClientScript.RegisterStartupScript(this.GetType(), "", "uploadstatus('success','Arquivo processado')", true);
 
                     }
                     catch (Exception ex)
@@ -115,10 +115,12 @@ namespace Endpoint.upload
             { 
                 run.executesendmstest(message);
                 ClientScript.RegisterStartupScript(this.GetType(), "", "uploadstatus('success','Mensagem enviada! ;)')", true);
+                ClearGridView();
+
+
             }
 
         }
-
 
         public void GetDataTable()
         {
@@ -159,5 +161,39 @@ namespace Endpoint.upload
         {
             ClientScript.RegisterStartupScript(this.GetType(), "", "info()", true);
         }
+
+
+        public void ClearGridView()
+        {
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            lblmessage.Text = null;
+
+            
+        }
+
+        protected void ClearGridView(object sender, EventArgs e)
+        {
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            lblmessage.Text = null;
+            string fileLocation = Server.MapPath("~/files/data.xlsx");
+            try
+            { 
+                File.Delete(fileLocation);
+                ClientScript.RegisterStartupScript(this.GetType(), "", "uploadstatus('success','Arquivo deletado!')", true);
+            } catch (Exception ex)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "", "error('"+ ex.Message +"')", true);
+            }
+        }
+
+        protected void SetTextBox(Object sender, EventArgs e)
+        {
+            System.Web.UI.WebControls.Button btn = (System.Web.UI.WebControls.Button)sender;
+            string text = btn.CommandArgument.ToString();
+            ClientScript.RegisterStartupScript(this.GetType(), "", "settextbox('" + text + "')", true);
+        }
+
     }
 }
