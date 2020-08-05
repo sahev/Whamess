@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -76,7 +77,7 @@ namespace Endpoint.Controllers
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardInput = true;
             psi.RedirectStandardError = true;
-            psi.WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"]; ;
+            psi.WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
 
             try
             {
@@ -109,6 +110,10 @@ namespace Endpoint.Controllers
 
                 sOut.Close();
 
+                string deletefile = ConfigurationManager.AppSettings["WorkingDirectory"] + "endpoint\\endpoint\\files\\data.xlsx";
+
+                File.Delete(deletefile);
+
                 return "success!";
             }
 
@@ -121,3 +126,4 @@ namespace Endpoint.Controllers
 
     }
 }
+

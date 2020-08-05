@@ -48,27 +48,52 @@ function info() {
      
         confirmButtonText: 'Next &rarr;',
         showCancelButton: false,
-        progressSteps: ['1', '2', '3']
+        progressSteps: ['1', '2', '3', '4']
     }).queue([
         {
             title: 'Passo 1:',
-            text: 'Selecione um arquivo com formato .xls ou .xlsx'
+            text: 'Selecione um arquivo com formato .xls ou .xlsx, sendo a primeira coluna obrigatoriamente '
+                + 'com o Telefone no formato "11123456789", a segunda com o Nome, + 5 colunas (ou menos) com variáveis de sua escolha...',
+            imageUrl: '/help/ex1.png'
         },
         {
             title: 'Passo 2:',
             html: 'Preencha o campo "Script" com uma mensagem substuindo as variáveis abaixo pelos respectivos campos do documento adicionado:<p>' 
-                + '<p>{0} = Número; '
-                + '<p>{1} = Nome; '
-                + '<p>{2} = Variável1; '
-                + '<p>{3} = Variável2; '
-                + '<p>{4} = Variável3; '
-                + '<p>{5} = Variável4; '
-                + '<p>{6} = Variável5;'
+                + '<li>{0} = Número;</li> '
+                + '<li>{1} = Nome; </li>'
+                + '<li>{2} = Coluna1;</li> '
+                + '<li>{3} = Coluna2; </li>'
+                + '<li>{4} = Coluna3; </li>'
+                + '<li>{5} = Coluna4; </li>'
+                + '<li>{6} = Coluna5;</li>'
         },
         {
-            title: 'Passo 3:',
-            text: 'Selecione o arquivo;'
+            title: 'Variáveis substiuídas:',
+            imageUrl: '/help/ex2.png'
         },
+        {
+            title: 'Olha que beleza!',
+            imageUrl: '/help/ex3.png'
+        },
+        
     ])
 }
 
+function uploadstatus(icon, title) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: icon,
+        title: title
+    })
+}

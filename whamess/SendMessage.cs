@@ -107,7 +107,7 @@ namespace whamess
                         "}; " +
                     "myFunc();";
 
-                System.Console.WriteLine(String.Format("Number: {0} Name: {1} Var1: {2} Var2: {3} Var3: {4} Var4: {5} Var5: {6} ", a.Number, a.Name, a.v2, a.v3, a.v4, a.v5, a.v6));
+                //System.Console.WriteLine(String.Format("Number: {0} Name: {1} Var1: {2} Var2: {3} Var3: {4} Var4: {5} Var5: {6} ", a.Number, a.Name, a.v2, a.v3, a.v4, a.v5, a.v6));
 
 
                 ((IJavaScriptExecutor)Page.Driver).ExecuteScript(jsnumber);
